@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 37310a351b1c4784e8ed2186cc8fa558
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - F-Zero GX Menu Font
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d8058e7eddc7fbc4b8c6e2f3368a8940, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

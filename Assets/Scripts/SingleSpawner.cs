@@ -6,19 +6,41 @@ using UnityEngine;
 public class SingleSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject _asteroidPrefab;
-
-    private float _time;
-    [SerializeField] private float _spawnTime = 1f;
     
     // Start is called before the first frame update
     void Start()
     {
-        var xPos = Random.Range(-1, 2);
+        for (int i = 10; i <= 50; i += 10)
+        {
+            var rndNbr = Random.Range(1, 6);
+
+            int yPos;
             
-        Vector3 spawnPos = new Vector3(transform.position.x + xPos,
-            transform.position.y, transform.position.z);
-        
-        Instantiate(_asteroidPrefab, spawnPos, Quaternion.identity);
+            if (i == 10)
+            {
+                yPos = 10;
+            }
+            else
+            {
+                yPos = Random.Range(i - 7, i - 2);
+            }
+            
+            if (rndNbr <= 3)
+            {
+                Instantiate(_asteroidPrefab, new Vector3(5f, yPos, 0f), Quaternion.identity);
+                Instantiate(_asteroidPrefab, new Vector3(-5f, yPos, 0f), Quaternion.identity);
+            }
+            else if (rndNbr == 4)
+            {
+                Instantiate(_asteroidPrefab, new Vector3(5f + 1, yPos, 0f), Quaternion.identity);
+                Instantiate(_asteroidPrefab, new Vector3(-5f + 1, yPos, 0f), Quaternion.identity);
+            }
+            else if (rndNbr == 5)
+            {
+                Instantiate(_asteroidPrefab, new Vector3(5f - 1, yPos, 0f), Quaternion.identity);
+                Instantiate(_asteroidPrefab, new Vector3(-5f - 1, yPos, 0f), Quaternion.identity);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -41,9 +63,9 @@ public class SingleSpawner : MonoBehaviour
         // }
     }
 
-    private IEnumerator DestroyCo(GameObject asteroid)
-    {
-        yield return new WaitForSeconds(1f);
-        Destroy(asteroid);
-    }
+    // private IEnumerator DestroyCo(GameObject asteroid)
+    // {
+    //     yield return new WaitForSeconds(1f);
+    //     Destroy(asteroid);
+    // }
 }
